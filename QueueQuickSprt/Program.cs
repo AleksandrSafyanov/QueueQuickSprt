@@ -235,9 +235,11 @@ namespace Queue
       for (int i = 0; i < _digitsCount; i++)
         Console.Write("{0,6}", queue.Dequeue());
 
-      Console.WriteLine("_________________________________________________________");
+      Console.WriteLine("\n_________________________________________________________");
       Console.WriteLine($"Time spent: {time.ElapsedMilliseconds}");
-      Console.WriteLine("_________________________________________________________");
+
+      TimeSpan interval = TimeSpan.FromMilliseconds((double)time.ElapsedMilliseconds);
+      Console.WriteLine("h.m.s.ms\n{0}:{1}:{2}:{3}", interval.Hours, interval.Minutes, interval.Seconds, interval.Milliseconds);
 
       Console.ReadLine();
     }
